@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  font-size: 28px;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.app > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app > div > div {
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 50px;
+  margin: 20px
+}
+
+.divide {
+  height: 300px;
+  border-left: 1px solid gray;
+}
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>
+        const { useState, useEffect } = React;
+
+function App() {
+  console.clear();
+  const [counterOne, setCounterOne] = useState(0);
+  const [counterTwo, setCounterTwo] = useState(0);
+
+  useEffect(() => {
+        console.log('called once and never again')
+    }, [])
+  
+  useEffect(() => {
+        console.log('called every time')
+    })
+  
+  useEffect(() => {
+        console.log('counterOne changed')
+    }, [counterOne])
+  
+  useEffect(() => {
+        console.log('counterTwo changed')
+    }, [counterTwo])
+  
+  useEffect(() => {
+        console.log('counterOne or counterTwo was changed')
+    }, [counterOne, counterTwo])
+  
+  return (
+    <div className="app">
+      <div>
+        <button onClick={() => setCounterOne(counterOne + 1)}>++ Counter One</button>               
+        <div>
+          Counter One Value:
+        </div>
+        <h3>{counterOne}</h3>
+      </div>
+      <span className="divide" />
+      <div>
+        <button onClick={() => setCounterTwo(counterTwo + 1)}>++ Counter Two</button>
+        <div>
+          Counter Two Value:
+        </div>
+        <h3>{counterTwo}</h3>
+      </div>
+    </div>
+  );
+}
+
+const el = document.querySelector('#root');
+const root = ReactDOM.createRoot(el);
+
+root.render(<App />);
+    </script>
+
+</body>
+</html>
