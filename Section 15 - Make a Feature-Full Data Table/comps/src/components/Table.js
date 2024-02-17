@@ -1,0 +1,36 @@
+function Table({data, config, keyFn}) {
+    const renderedCol = config.map((col) => {
+        return (<th key={col.label}>{col.label}</th>)
+    })
+
+    const renderedRow = data.map((rowData)=> {
+        // return (<tr key={fruit.name} className='border-b'>
+        //     <td className='p-3'>{fruit.name}</td>
+        //     <td className='p-3'>
+        //         <div className={`p-3 m-2 ${fruit.color}`}>
+        //         </div></td>
+        //     <td className='p-3'>{fruit.score}</td>
+        // </tr>) 
+
+        const renderedCell = config.map((column)=>{
+            return (<td className='p-3' key={column.label}>{column.render(rowData)}</td>)
+        })
+
+        return (<tr key={keyFn(rowData)} className='border-b'>{renderedCell}</tr>)
+    })
+
+    return (<div>
+        <table className='table-auto border-spacing-2'>
+            <thead>
+                <tr className='border-b-2' >
+                {renderedCol}
+                </tr>
+            </thead>
+            <tbody>
+                {renderedRow}
+            </tbody>
+        </table>
+    </div>)
+}
+
+export default Table
