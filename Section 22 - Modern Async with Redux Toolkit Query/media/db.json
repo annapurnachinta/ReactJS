@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Myra"
+    },
+    {
+      "id": "b26a",
+      "name": "Juana Tillman"
+    }
+  ],
+  "albums": [
+    {
+      "id": "2316",
+      "userId": "1",
+      "title": "Small Bronze Ball"
+    },
+    {
+      "id": "045b",
+      "userId": "b26a",
+      "title": "Bespoke Fresh Shoes"
+    },
+    {
+      "id": "fd59",
+      "userId": "1",
+      "title": "Bespoke Rubber Sausages"
+    }
+  ],
+  "photos": [
+    {
+      "id": "6285",
+      "albumId": "2316",
+      "url": "https://loremflickr.com/150/150/abstract?lock=62104"
+    },
+    {
+      "id": "780f",
+      "albumId": "045b",
+      "url": "https://loremflickr.com/150/150/abstract?lock=13019"
+    }
+  ]
+}
