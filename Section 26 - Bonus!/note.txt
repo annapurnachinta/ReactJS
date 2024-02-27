@@ -1,0 +1,16 @@
+creating react project
+npx create-react-app 'typescript-examples'
+
+creating vite project
+npm create vite location-search -- --template react-ts 
+
+install the package
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p 
+npm i @types/leaflet leaflet react-leaflet 
+npm i react-router-dom
+
+to run the code
+npm run dev
+npm start
+npm run start
